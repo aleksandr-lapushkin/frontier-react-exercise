@@ -56,16 +56,16 @@ const Form: React.FC<FormProps> = ({ job, onSubmit }) => {
     return (
         <FormRoot>
             <FormSizer>
-            <form onSubmit={methods.handleSubmit(onSubmitCallback)}>
-                <FormProvider {...methods}>
-                    <Section section={job.sections[currentSection]} />
-                </FormProvider>
-                <div>
-                    {atFinalSection && <SubmitButton data-testid='form-submit' type='submit' />}
-                    {!atFinalSection && <Button style={{width: '100%'}} onClick={goNext}>Next</Button>}
-                    {!atFirstSection && <Button style={{width: '100%'}} onClick={goBack}>Previous</Button>}
-                </div>
-            </form>
+                <form onSubmit={methods.handleSubmit(onSubmitCallback)}>
+                    <FormProvider {...methods}>
+                        <Section section={job.sections[currentSection]} />
+                    </FormProvider>
+                    <div>
+                        {atFinalSection && <SubmitButton data-testid='form-submit' type='submit' />}
+                        {!atFinalSection && <Button style={{width: '100%'}} onClick={goNext}>Next</Button>}
+                        {!atFirstSection && <Button style={{width: '100%'}} onClick={goBack}>Previous</Button>}
+                    </div>
+                </form>
             </FormSizer>
         </FormRoot>
     )
