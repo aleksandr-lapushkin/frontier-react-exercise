@@ -1,19 +1,26 @@
 import React from 'react';
+import styled, { ThemeProvider } from 'styled-components';
 import formInstructions from '../data/form_instructions.json';
+import Form from './Form';
+const job = formInstructions as Frontier.Job;
+
+const Root = styled.div`
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  color: ${props => props.theme.text_color};
+  font-family: sans-serif;
+`
 
 function App() {
-  const job = formInstructions as Frontier.Job;
-
   // Check your console to see the full instructions!
   console.log(job);
 
   return (
-    <div>
-      <img src="https://frontier-public-assets.s3-us-west-2.amazonaws.com/frontier-corona-logo.svg" alt="Frontier Logo" />
-      <h1>👋 Hello from Team Frontier!</h1>
-      <p>Good luck with the exercise. If you have any questions please email Jason: jason@frontier.jobs</p>
-    </div>
+    <Root>
+        <Form job={job} />
+    </Root>
   );
 }
 
-export default App;
+export default App

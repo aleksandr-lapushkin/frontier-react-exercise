@@ -4,6 +4,7 @@ namespace Frontier {
     secondary_color?: string;
     background_color?: string;
     text_color?: string;
+    text_color_secondary?: string;
   }
 
   // Describes the job application UI
